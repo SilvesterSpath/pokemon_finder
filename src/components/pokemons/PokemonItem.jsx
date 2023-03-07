@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 
-function PokemonItem({ pokemon: { name, url } }) {
+function PokemonItem({ pokemon: { name, url }, idx }) {
   const {
     attributes,
     listeners,
@@ -13,6 +13,13 @@ function PokemonItem({ pokemon: { name, url } }) {
     transition,
     isDragging,
   } = useSortable({ id: name, url: url });
+
+  const regex = /\/(\d+)\/$/;
+  const match = url.match(regex);
+  let number;
+  if (match) {
+    number = match[1];
+  }
 
   const style = {
     transform: CSS.Transform.toString(transform),
@@ -27,6 +34,7 @@ function PokemonItem({ pokemon: { name, url } }) {
           <div className='rounded-full shadow w-25 h-25'>
             <CgPokemon style={{ fontSize: '40px' }} />
           </div>
+          <div></div>
           <div>
             <h2 className='card-title'>{name}</h2>
             <Link
@@ -36,6 +44,9 @@ function PokemonItem({ pokemon: { name, url } }) {
               Visit Profile
             </Link>
           </div>
+        </div>
+        <div style={{ textAlign: 'right', margin: '5px', fontWeight: 'bold' }}>
+          {number}
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Spinner from '../layout/Spinner';
 import PokemonItem from './PokemonItem';
 import PokemonContext from '../../context/pokemon/PokemonContext';
@@ -33,8 +33,8 @@ function PokemonResults() {
   return (
     <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
       <div className='grid grid-cols-1 gap-8 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2'>
-        <SortableContext items={pokemons}>
-          {pokemons.map(
+        <SortableContext items={pokemons_}>
+          {pokemons_.map(
             (item, idx) =>
               item &&
               item.name && (

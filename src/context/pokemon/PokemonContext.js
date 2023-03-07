@@ -33,7 +33,6 @@ export const PokemonProvider = ({ children }) => {
 
       // this is destructuring the data.items
       const results = await res.json();
-      console.log(results);
 
       dispatch({
         type: 'GET_POKEMONS',
@@ -53,8 +52,6 @@ export const PokemonProvider = ({ children }) => {
     } else {
       // this is destructuring the data.items
       const data = await res.json();
-
-      console.log(data);
 
       dispatch({
         type: 'GET_POKEMON',

@@ -1,3 +1,5 @@
+import { FaCodepen } from 'react-icons/fa';
+import { GiBodyHeight, GiWeight } from 'react-icons/gi';
 import { useContext, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
@@ -13,7 +15,16 @@ function Pokemon() {
     // eslint-disable-next-line
   }, []);
 
-  const { name, sprites, location_area_encounters, is_default } = pokemon;
+  const {
+    name,
+    sprites,
+    location_area_encounters,
+    is_default,
+    height,
+    weight,
+    base_experience,
+    species,
+  } = pokemon;
 
   if (loading) {
     return <Spinner />;
@@ -35,31 +46,51 @@ function Pokemon() {
               </figure>
               <div className='card-body justify-end'>
                 <h2 className='card-title mb-0'>{name}</h2>
-                {/*  <p>{user.login}</p> */}
               </div>
             </div>
           </div>
           <div className='col-span-2'>
             <div className='mb-6'>
               <h1 className='text-3xl card-title'>
-                {/*                 {user.login}
-                <div className='ml-2 mr-1 badge badge-success'>{type}</div> */}
                 {is_default && (
                   <div className='mx-1 badge badge-info'>Default</div>
                 )}
               </h1>
-              {/* <p>{bio}</p> */}
-              <div className='mt-4 card-actions'>
-                {/* This is an outside link so I need to define the target and the noreferrer */}
-                <a
-                  href={location_area_encounters}
-                  target='_blank'
-                  rel='noreferrer'
-                  className='btn btn-outline'
-                >
-                  Visit Github Profile
-                </a>
-              </div>
+              {species && (
+                <div className='stat'>
+                  <div className='stat-title text-md'>Species url</div>
+                  <div className='text-lg stat-value'>
+                    <a href={`${species.url}`} target='_blank' rel='noreferrer'>
+                      {species.name}
+                    </a>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+        <div className='w-full py-5 mb-6 rounded-lg shadow-md bg-base-100 stats'>
+          <div className='stat'>
+            <div className='stat-figure text-secondary'>
+              <GiBodyHeight className='text-3xl md:text-5xl' />
+            </div>
+            <div className='stat-title pr-5'>Height</div>
+            <div className='stat-value pr-5 text-3xl md:text-4xl'>{height}</div>
+          </div>
+          <div className='stat'>
+            <div className='stat-figure text-secondary'>
+              <GiWeight className='text-3xl md:text-5xl' />
+            </div>
+            <div className='stat-title pr-5'>Weight</div>
+            <div className='stat-value pr-5 text-3xl md:text-4xl'>{weight}</div>
+          </div>
+          <div className='stat'>
+            <div className='stat-figure text-secondary'>
+              <FaCodepen className='text-3xl md:text-5xl' />
+            </div>
+            <div className='stat-title pr-5'>Base Experience</div>
+            <div className='stat-value pr-5 text-3xl md:text-4xl'>
+              {base_experience}
             </div>
           </div>
         </div>

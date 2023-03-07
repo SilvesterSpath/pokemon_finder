@@ -7,6 +7,7 @@ function PokemonSearch() {
     useContext(PokemonContext);
 
   const [text, setText] = useState('');
+  const [title, setTitle] = useState('');
 
   const handleChange = (e) => setText(e.target.value);
 
@@ -14,6 +15,7 @@ function PokemonSearch() {
     e.preventDefault();
 
     searchPokemons(text);
+    setTitle('You can rearrange the order of the Pokemons by dragging them');
     setText('');
   };
 
@@ -30,7 +32,7 @@ function PokemonSearch() {
               <input
                 type='text'
                 className='w-full pr-40 bg-gray-200 input input-lg text-black'
-                placeholder='Search for.. or list 20 pokemons'
+                placeholder='Search for a pokemon or list 20..'
                 value={text}
                 onChange={handleChange}
               />
@@ -50,7 +52,6 @@ function PokemonSearch() {
           <button
             className='btn btn-ghost btn-lg'
             onClick={() => {
-              console.log('reset');
               resetPokemons();
             }}
           >
@@ -58,6 +59,7 @@ function PokemonSearch() {
           </button>
         </div>
       )}
+      <h1>{pokemons.length !== 0 ? title : ''}</h1>
     </div>
   );
 }
