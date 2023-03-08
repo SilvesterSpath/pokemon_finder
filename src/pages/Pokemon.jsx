@@ -43,9 +43,9 @@ function Pokemon() {
               <figure>
                 <img src={sprites && sprites.front_default} alt='img' />
               </figure>
-              <div className='card-body justify-end'>
+              {/*               <div className='card-body justify-end'>
                 <h2 className='card-title mb-0'>{name}</h2>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className='col-span-2'>
@@ -57,11 +57,9 @@ function Pokemon() {
               </h1>
               {species && (
                 <div className='stat'>
-                  <div className='stat-title text-md'>Species url</div>
+                  <div className='stat-title text-md'>Species name</div>
                   <div className='text-lg stat-value'>
-                    <a href={`${species.url}`} target='_blank' rel='noreferrer'>
-                      {species.name}
-                    </a>
+                    <p>{species.name}</p>
                   </div>
                 </div>
               )}
