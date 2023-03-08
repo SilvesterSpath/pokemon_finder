@@ -15,7 +15,7 @@ function PokemonItem({ pokemon: { name, url }, idx }) {
   } = useSortable({ id: name, url: url });
 
   const regex = /\/(\d+)\/$/;
-  const match = url.match(regex);
+  const match = url ? url.match(regex) : ['pikachu'];
   let number;
   if (match) {
     number = match[1];
@@ -56,7 +56,6 @@ function PokemonItem({ pokemon: { name, url }, idx }) {
 PokemonItem.propTypes = {
   pokemon: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired,
   }).isRequired,
 };
 

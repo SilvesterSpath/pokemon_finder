@@ -18,7 +18,6 @@ function Pokemon() {
   const {
     name,
     sprites,
-    location_area_encounters,
     is_default,
     height,
     weight,

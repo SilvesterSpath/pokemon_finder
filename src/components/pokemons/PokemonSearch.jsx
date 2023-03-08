@@ -15,7 +15,7 @@ function PokemonSearch() {
     e.preventDefault();
 
     searchPokemons(text);
-    setTitle('You can rearrange the order of the Pokemons by dragging them');
+    setTitle('You can rearrange the order of the Pokémons by dragging them');
     setText('');
   };
 
@@ -32,7 +32,7 @@ function PokemonSearch() {
               <input
                 type='text'
                 className='w-full pr-40 bg-gray-200 input input-lg text-black'
-                placeholder='Search for a pokemon or list 20..'
+                placeholder='Search for a pokémon or list 20..'
                 value={text}
                 onChange={handleChange}
               />

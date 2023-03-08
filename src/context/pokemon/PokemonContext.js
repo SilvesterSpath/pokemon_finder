@@ -29,15 +29,22 @@ export const PokemonProvider = ({ children }) => {
         payload: results,
       });
     } else {
-      const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${text}`);
+      try {
+        const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${text}`);
 
-      // this is destructuring the data.items
-      const results = await res.json();
+        // this is destructuring the data.items
+        const results = await res.json();
 
-      dispatch({
-        type: 'GET_POKEMONS',
-        payload: [results],
-      });
+        console.log(results);
+
+        dispatch({
+          type: 'GET_POKEMONS',
+          payload: [results],
+        });
+      } catch (error) {
+        console.log(error.message);
+        window.location = '/notfound';
+      }
     }
   };
 
