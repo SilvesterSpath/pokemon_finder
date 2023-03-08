@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+This is a pokémon finder app
+The app description is:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Basic sales tax is applicable at a rate of 10% on all goods, except books, food, and medical products that are exempt. Import duty is an additional sales tax applicable on all imported goods at a rate of 5%, with no exemptions. When I purchase items I receive a receipt which lists the name of all the items and their price (including tax), finishing with the total cost of the items, and the total amounts of sales taxes paid. The rounding rules for sales tax are that for a tax rate of n%, a shelf price of p contains (np/100 rounded up to the nearest 0.05) amount of sales tax. Write an application that prints out the receipt details for these shopping baskets…
+INPUT:
 
-## Available Scripts
+Input 1:
 
-In the project directory, you can run:
+    The search field is empty
 
-### `npm start`
+Input 2:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    Search after a specific pokémon for example 'pikachu'
 
-The page will reload when you make changes.\
+Input 3:
+
+    After listing one or more pokémon(s) we can click on the 'Visit Profile' link
+
+OUTPUT
+
+Output 1:
+
+    After hitting the 'GO' button, 20 pokemons will appear
+    We can arrange the order of the pokemons by dragging them
+
+Output 2:
+
+    After hitting the 'GO' button, the desired pokémon will appear
+    If we spelled the name incorrectly the '404 not found' page will appear
+
+Output 3:
+
+    We will be taken on the 'Profile' page where the picked pokémons hight, weight, base experience and a nice picture of of it are shown
+
+Getting Started with the App
+
+After downloading the code, in the project directory, you can run:
+
+npm start
+
+Runs the app in the development mode.
+Open http://localhost:3000 to view it in your browser.
+
+The page will reload when you make changes.
 You may also see any lint errors in the console.
 
-### `npm test`
+npm test
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner in the interactive watch mode.
+See the section about running tests for more information.
 
-### `npm run build`
+Deployment
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The app have been deployed on Vercel under the url of: https://pokemon-finder-pi.vercel.app/
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Used frameworks and libraries:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Tailwind CSS
+- Daisy UI
+- react-testing-library
+- react-dnd/kit
+- react-router-dom
+- react-icons
