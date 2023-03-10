@@ -1,7 +1,14 @@
 This is a pokémon finder app
 The app description is:
 
-Basic sales tax is applicable at a rate of 10% on all goods, except books, food, and medical products that are exempt. Import duty is an additional sales tax applicable on all imported goods at a rate of 5%, with no exemptions. When I purchase items I receive a receipt which lists the name of all the items and their price (including tax), finishing with the total cost of the items, and the total amounts of sales taxes paid. The rounding rules for sales tax are that for a tax rate of n%, a shelf price of p contains (np/100 rounded up to the nearest 0.05) amount of sales tax. Write an application that prints out the receipt details for these shopping baskets…
+The software used for searching pokémons by name or listing 20 of them with the use of the
+https://pokeapi.co/ 3rd party API. After listing one or more pokémons, we are able to click on the ‘Visit
+Profile’ link, which will take us to the ‘Profile’ screen, where we can find detailed information about the
+selected pokémon. Such as height, weight and base experience, and an image of the pokémon.
+If during the search we spelled wrong the pokémon, we will go to the ‘404 not found’ screen.
+To manage global state I used the React context api with reducers.
+
+
 INPUT:
 
 Input 1:
