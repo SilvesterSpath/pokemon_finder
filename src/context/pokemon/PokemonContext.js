@@ -8,6 +8,7 @@ export const PokemonProvider = ({ children }) => {
     pokemons: [],
     pokemon: {},
     loading: false,
+    error: null,
   };
 
   const [state, dispatch] = useReducer(PokemonReducer, initialState);
@@ -42,8 +43,15 @@ export const PokemonProvider = ({ children }) => {
           payload: [results],
         });
       } catch (error) {
-        console.log(error.message);
-        window.location = '/notfound';
+        dispatch({
+          type: 'ERROR',
+          payload:
+            error.response && error.response.data.message
+              ? error.response.data.message
+              : error.message,
+        });
+        setTimeout(() => dispatch({ type: 'REMOVE_ERROR' }), 3000);
+        /*  window.location = '/notfound'; */
       }
     }
   };

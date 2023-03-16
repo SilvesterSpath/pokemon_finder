@@ -22,6 +22,18 @@ const PokemonReducer = (state, action) => {
         ...state,
         pokemons: [],
       };
+    case 'ERROR':
+      return {
+        ...state,
+        loading: false,
+        error: action.payload,
+      };
+    case 'REMOVE_ERROR':
+      return {
+        ...state,
+        loading: false,
+        error: null,
+      };
     default:
       return state;
   }

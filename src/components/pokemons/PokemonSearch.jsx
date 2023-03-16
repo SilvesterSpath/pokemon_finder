@@ -3,7 +3,7 @@ import PokemonContext from '../../context/pokemon/PokemonContext';
 import Spinner from '../layout/Spinner';
 
 function PokemonSearch() {
-  const { pokemons, loading, searchPokemons, resetPokemons } =
+  const { error, pokemons, loading, searchPokemons, resetPokemons } =
     useContext(PokemonContext);
 
   const [text, setText] = useState('');
@@ -28,6 +28,9 @@ function PokemonSearch() {
       <div>
         <form onSubmit={handleSubmit}>
           <div className='form-control'>
+            {error && error.length !== 0 && (
+              <div>Please choose a real pokemon!</div>
+            )}
             <div className='relative'>
               <input
                 type='text'
@@ -36,6 +39,7 @@ function PokemonSearch() {
                 value={text}
                 onChange={handleChange}
               />
+
               <button
                 type='submit'
                 className='absolute top-0 right-0 rounded-l-none width-36 btn btn-lg'
